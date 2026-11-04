@@ -1,0 +1,7 @@
+{
+  "checked_at": null,
+  "change_detected": false,
+  "summary": "No automated check has run yet. Run the GitHub Actions workflow to create the first baseline.",
+  "sources": [],
+  "errors": []
+}

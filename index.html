@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#073b78">
+<title>BOI Live Banking Dashboard</title>
+<style>
+:root{--navy:#073b78;--blue:#1266c5;--sky:#eaf4ff;--ink:#163252;--muted:#60758e;--bg:#f3f8ff;--line:#d9e8f8;--white:#fff;--green:#147d4a;--amber:#9a6500}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eaf4ff 0,#f7fbff 340px,#f3f8ff 100%);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink)}
+header{background:linear-gradient(120deg,#06336b,#0863b8 58%,#2b8be2);color:white;padding:32px 18px;box-shadow:0 8px 24px #0756a522}
+.wrap,main{max-width:1100px;margin:auto}.eyebrow{color:#cfe7ff;font-weight:800;letter-spacing:.15em;font-size:11px}.title{font-size:clamp(27px,5vw,42px);line-height:1.15;font-weight:850;margin:10px 0}.sub{color:#e4f2ff;max-width:760px}
+main{padding:22px 14px 46px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 7px 22px #174f8610}.card h2{font-size:19px;margin:0 0 7px;color:var(--navy)}.card p{color:var(--muted);margin:0 0 12px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.btn{display:inline-block;text-decoration:none;border:0;border-radius:11px;padding:11px 15px;font-weight:800;background:#fff;color:#0756a5;cursor:pointer}.btn.primary{background:#fff;color:#0756a5}.btn.outline{border:1px solid #d4e7fa;background:#f5faff}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.pill{font-size:12px;border-radius:30px;padding:5px 10px;background:#e2f1ff;color:#0756a5;font-weight:800}.pill.good{background:#e3f5eb;color:#147d4a}.pill.warn{background:#fff2d6;color:#8a5b00}
+.notice{background:white;border:1px solid #c9e1fb;border-left:5px solid #2184df;padding:14px 16px;border-radius:14px;color:#34536f;margin:16px 0}
+.section{margin:27px 0 12px;font-size:22px;color:var(--navy)}.list{display:grid;gap:9px}.source{padding:12px;border:1px solid var(--line);border-radius:12px;background:#f8fbff}.source a{color:#0756a5;font-weight:750;text-decoration:none}.small{font-size:12px;color:var(--muted)}.footer{margin-top:25px;color:var(--muted);font-size:12px;border-top:1px solid #d8e7f6;padding-top:16px}
+@media(max-width:560px){header{padding:26px 16px}.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="wrap"><div class="eyebrow">BANK OF INDIA • OFFICIAL-SOURCE MONITOR</div>
+<div class="title">BOI Live Banking Dashboard</div>
+<div class="sub">Loan interest rates, fixed deposits, credit cards, fees and official documents — one shareable, mobile-friendly place.</div>
+<div class="meta"><span class="pill">BLUE & WHITE EDITION</span><span class="pill">WEEKLY CHECK</span><span class="pill">FREE HOSTING</span></div></div></header>
+<main>
+<section class="card">
+<h2>🔄 Dashboard Update Control</h2>
+<p>Automatic source check runs every Monday. To run a manual check, open the workflow page and select <b>Run workflow</b>. This avoids putting a private access token inside a public website.</p>
+<div class="actions"><a class="btn primary" id="manualBtn" href="https://github.com/" target="_blank" rel="noopener">Run Manual Update ↗</a><button class="btn outline" id="refreshBtn" type="button">Refresh Dashboard ↻</button></div>
+<div class="meta"><span class="pill" id="status">Loading update status…</span><span class="pill" id="checked">Last checked: loading…</span></div>
+<p class="small" id="note" style="margin-top:10px">The update monitor detects changes to official source pages and linked documents. It does not treat a changed document as a verified rate change.</p>
+</section>
+<div class="notice"><b>Important:</b> Independent reference tool; not an official BOI website. Always confirm effective dates and terms in the latest BOI circular/PDF before advising customers or quoting a rate. No rate is published as verified solely because a source file changed.</div>
+<h2 class="section">Banking Information</h2>
+<div class="grid">
+<section class="card"><h2>🏠 Loan Interest Rates</h2><p>Retail, housing, vehicle, personal, education, mortgage, MSME and agriculture lending information.</p><div class="list">
+<div class="source"><a href="https://bankofindia.bank.in/interest-rate" target="_blank" rel="noopener">BOI Interest Rate Hub ↗</a></div>
+<div class="source"><a href="https://bankofindia.bank.in/loan-services" target="_blank" rel="noopener">BOI Loan Services ↗</a></div></div></section>
+<section class="card"><h2>💰 FD / Term Deposits</h2><p>Domestic, NRE/NRO, retail and bulk deposits, special tenures and senior citizen rates.</p><div class="list">
+<div class="source"><a href="https://bankofindia.bank.in/interest-rate" target="_blank" rel="noopener">BOI Interest Rate Hub ↗</a></div>
+<div class="source"><a href="https://bankofindia.bank.in/" target="_blank" rel="noopener">BOI Official Website ↗</a></div></div></section>
+<section class="card"><h2>💳 Credit Cards</h2><p>Card variants, eligibility, fees, charges, rewards, MITC and FAQs.</p><div class="list">
+<div class="source"><a href="https://bankofindia.bank.in/credit-card/" target="_blank" rel="noopener">BOI Credit Cards ↗</a></div></div></section>
+<section class="card"><h2>📋 Service Charges & Rules</h2><p>Processing fees, service charges, documentation and product terms.</p><div class="list">
+<div class="source"><a href="https://bankofindia.bank.in/" target="_blank" rel="noopener">BOI Official Website ↗</a></div>
+<div class="source"><a href="https://bankofindia.bank.in/interest-rate" target="_blank" rel="noopener">BOI Interest Rate Hub ↗</a></div></div></section>
+</div>
+<h2 class="section">Latest Official Source Checks</h2>
+<section class="card"><p id="changeSummary">Reading the latest check report…</p><div class="list" id="documents"></div></section>
+<div class="footer">Data source: Bank of India official website and documents. Monitoring reports source/document changes, not bank approvals. Always rely on the latest effective circular, product terms and sanction-specific conditions. Dashboard build is independently maintained.</div>
+</main>
+<script>
+const OWNER_REPO = "YOUR_GITHUB_USERNAME/boi-live-dashboard";
+const WORKFLOW = "boi-weekly-check.yml";
+document.getElementById("manualBtn").href = `https://github.com/${OWNER_REPO}/actions/workflows/${WORKFLOW}`;
+document.getElementById("refreshBtn").addEventListener("click",()=>location.reload());
+async function loadReport(){
+ try{
+  const r=await fetch("./data/report.json?ts="+Date.now(),{cache:"no-store"});
+  if(!r.ok) throw new Error("No report published yet");
+  const d=await r.json();
+  document.getElementById("status").textContent=d.change_detected?"Official source changes detected":"No source changes detected";
+  document.getElementById("status").className="pill "+(d.change_detected?"warn":"good");
+  document.getElementById("checked").textContent="Last checked: "+new Date(d.checked_at).toLocaleString("en-IN");
+  document.getElementById("changeSummary").textContent=d.summary||"Source check completed. Verify the linked documents for effective dates.";
+  const box=document.getElementById("documents"); box.innerHTML="";
+  (d.sources||[]).forEach(s=>{
+   const div=document.createElement("div");div.className="source";
+   const a=document.createElement("a");a.href=s.url;a.target="_blank";a.rel="noopener";a.textContent=s.title+" ↗";
+   const p=document.createElement("div");p.className="small";p.textContent=(s.kind||"Official source")+" • "+(s.status||"Checked")+(s.sha256?" • SHA-256 "+s.sha256.slice(0,12):"");
+   div.append(a,p);box.append(div);
+  });
+ }catch(e){
+  document.getElementById("status").textContent="Awaiting first automated check";
+  document.getElementById("checked").textContent="Last checked: Not available";
+  document.getElementById("changeSummary").textContent="The first report will appear after the GitHub Actions workflow completes. Use the official BOI links above in the meantime.";
+ }
+}
+loadReport();
+</script></body></html>

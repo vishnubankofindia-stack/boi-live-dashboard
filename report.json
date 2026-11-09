@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-04T09:05:22.403596+00:00",
+  "checked_at": "2026-11-09T03:12:36.631097+00:00",
   "change_detected": false,
   "summary": "No source changes detected, or this is the first baseline. This monitor detects document changes; it does not certify all interest rates. Some sources could not be checked; see GitHub Actions logs.",
   "sources": [],
